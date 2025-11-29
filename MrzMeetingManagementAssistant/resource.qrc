@@ -10,5 +10,6 @@
         <file>images/task.png</file>
         <file>images/team.png</file>
         <file>images/message.png</file>
+        <file>images/home.png</file>
     </qresource>
 </RCC>

@@ -3,6 +3,10 @@
 
 #include <QWidget>
 
+class MrzTitleBarWidget;
+class MrzLeftMenuBarWidget;
+class MrzCentralContentStackedWidget;
+
 class MrzMeetingAssistantWindow : public QWidget
 {
     Q_OBJECT
@@ -13,6 +17,11 @@ signals:
 
 private:
     void initUI();
+
+private:
+    MrzTitleBarWidget *m_pMrzTitleBarWidget;
+    MrzLeftMenuBarWidget *m_pMrzLeftMenuBarWidget;
+    MrzCentralContentStackedWidget *m_pMrzCentralContentStackedWidget;
 };
 
 #endif // MRZMEETINGASSISTANTWINDOW_H

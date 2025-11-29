@@ -12,18 +12,34 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 find_package(QT NAMES Qt6 Qt5 REQUIRED COMPONENTS Widgets)
 find_package(Qt${QT_VERSION_MAJOR} REQUIRED COMPONENTS Widgets)
 find_package(Qt${QT_VERSION_MAJOR} REQUIRED COMPONENTS Widgets)
+find_package(Qt${QT_VERSION_MAJOR} REQUIRED COMPONENTS Widgets)
+find_package(Qt${QT_VERSION_MAJOR} REQUIRED COMPONENTS Widgets)
+find_package(Qt${QT_VERSION_MAJOR} REQUIRED COMPONENTS Widgets)
+find_package(Qt${QT_VERSION_MAJOR} REQUIRED COMPONENTS Widgets)
 
 set(PROJECT_SOURCES
         main.cpp
         mainwindow.cpp
         mainwindow.h
         mainwindow.ui
+
+        resource.qrc
 )
 
 # UI界面
 set(UI_SOURCES
     MrzMeetingAssistantWindow.h
     MrzMeetingAssistantWindow.cpp
+
+    view/MrzTopTitleBarWidget.h
+    view/MrzTopTitleBarWidget.cpp
+    view/MrzLeftMenuBarWidget.h
+    view/MrzLeftMenuBarWidget.cpp
+    view/MrzCentralContentStackedWidget.h
+    view/MrzCentralContentStackedWidget.cpp
+
+    view/components/MrzPushButton.h
+    view/components/MrzPushButton.cpp
 )
 
 # 头文件目录
@@ -34,7 +50,7 @@ if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
         MANUAL_FINALIZATION
         ${PROJECT_SOURCES}
         ${UI_SOURCES}
-        resource.qrc
+
     )
 # Define target properties for Android with Qt 6 as:
 #    set_property(TARGET MrzMeetingManagementAssistant APPEND PROPERTY QT_ANDROID_PACKAGE_SOURCE_DIR
@@ -54,6 +70,10 @@ else()
     endif()
 endif()
 
+target_link_libraries(MrzMeetingManagementAssistant PRIVATE Qt${QT_VERSION_MAJOR}::Widgets)
+target_link_libraries(MrzMeetingManagementAssistant PRIVATE Qt${QT_VERSION_MAJOR}::Widgets)
+target_link_libraries(MrzMeetingManagementAssistant PRIVATE Qt${QT_VERSION_MAJOR}::Widgets)
+target_link_libraries(MrzMeetingManagementAssistant PRIVATE Qt${QT_VERSION_MAJOR}::Widgets)
 target_link_libraries(MrzMeetingManagementAssistant PRIVATE Qt${QT_VERSION_MAJOR}::Widgets)
 target_link_libraries(MrzMeetingManagementAssistant PRIVATE Qt${QT_VERSION_MAJOR}::Widgets)
 
