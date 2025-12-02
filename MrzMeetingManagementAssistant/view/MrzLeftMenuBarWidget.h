@@ -16,6 +16,10 @@ signals:
 
 private:
     void initUI();
+    void connectFun();
+
+private slots:
+    void slotButtonClicked(bool checked);
 
 private:
     // QPushButton *m_pHomeBtn;
@@ -25,6 +29,7 @@ private:
     // QPushButton *m_pTeamBtn;
 
     MrzPushButton *m_pHomeBtn;
+    MrzPushButton *m_pCalendarBtn;
 };
 
 #endif // MRZLEFTMENUBARWIDGET_H
